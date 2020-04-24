@@ -1,0 +1,93 @@
+<odoo>
+    <data>
+        <record id="todo_task_view_form" model="ir.ui.view">
+            <field name="name">todo.task.view_form</field>
+            <field name="model">todo.task</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Todo">
+                    <header>
+                        <field name="button_status" invisible="1"/>
+                        <button name="button_draft" string="提交" type="object" class="oe_highlight"
+                                attrs="{'invisible':['|',('state','!=','draft'),('button_status','=',False)]}"/>
+                        <button name="button_going" states="going" string="完成" type="object" class="oe_highlight"/>
+                        <button name="button_complete" states="complete" string="已完成" type="object" class="oe_highlight" />
+                        <button name="button_audit" states="going" string="备注" type="object" class="oe_highlight" />
+<!--                        <button name="button_remarks" type="object" string="重置" class="oe_highlight"/>-->
+                        <field name='state' widget='statusbar' statusbar_visible='draft,going,complete' />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="category_id"/>
+                                <field name="is_done"/>
+                            </group>
+                            <group>
+                                <field name="priority"/>
+                                <field name="deadline"/>
+                                <field name="language"/>
+                                <field name="originator"/>
+                            </group>
+                        </group>
+<!--                        <notebook colspan="11">-->
+<!--                            <page string="用户信息">-->
+<!--                                <field name="user_info" mode="tree" >-->
+<!--                                    <tree>-->
+<!--                                        <field name="name"/>-->
+<!--                                        <field name="age"/>-->
+<!--                                        <field name="gender"/>-->
+<!--                                        <field name="language"/>-->
+<!--                                        <field name="email_box"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </page>-->
+<!--                        </notebook>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+<!--        <record id="todo_remark_view_form" model="ir.ui.view">-->
+<!--            <field name="name">todo.remark.view_form</field>-->
+<!--            <field name="model">todo.remark</field>-->
+<!--            <field name="type">form</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string = "remarks">-->
+<!--                        <group>-->
+<!--                            <filed name="name"/>-->
+<!--                            <filed name="age"/>-->
+<!--                            <filed name="gender"/>-->
+<!--                            <filed name="education"/>-->
+<!--                        </group>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+        <record id="todo_user_view_form" model="ir.ui.view">
+            <field name="name">todo.user.view_form</field>
+            <field name="model">todo.remark</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="备注">
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="gender"/>
+                        <field name="education"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="todo_category_view_tree" model="ir.ui.view">
+            <field name="name">todo.category.view_tree</field>
+            <field name="model">todo.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Todo Category" editable="bottom">
+                    <field name="name"/>
+                    <field name="count"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

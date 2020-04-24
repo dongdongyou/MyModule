@@ -1,0 +1,17 @@
+<!--<odoo>-->
+<!--    <data>-->
+<!--        <record id="todo_remarks_view_from" model="ir.ui.view">-->
+<!--            <field name="name">todo.remarks.remarks_form</field>-->
+<!--            <field name="model">todo.remarks</field>-->
+<!--            <field name="type">form</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <from string = "remarks">-->
+<!--                    <filed name="name"/>-->
+<!--                    <filed name="age"/>-->
+<!--                    <filed name="gender"/>-->
+<!--                    <filed name="education"/>-->
+<!--                </from>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--</odoo>-->
